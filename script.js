@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Navbar slide-in from top
+  // Navbar slide-in
   gsap.to("#navbar", {
     y: 0,
     opacity: 1,
@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
     delay: 0.2
   });
 
-  // Button hover animation
-  document.querySelectorAll(".animated-btn").forEach(btn => {
-    btn.addEventListener("mouseenter", () => {
-      gsap.to(btn, {
+  // Button pulse on hover
+  document.querySelectorAll(".animated-btn").forEach(button => {
+    button.addEventListener("mouseenter", () => {
+      gsap.to(button, {
         scale: 1.08,
         duration: 0.3,
         yoyo: true,
@@ -21,12 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Scroll-triggered fade-ins
+  // Scroll-triggered fade-in
   gsap.registerPlugin(ScrollTrigger);
   gsap.utils.toArray(".fade-section").forEach(section => {
     gsap.from(section, {
       opacity: 0,
-      y: 50,
+      y: 60,
       duration: 1,
       scrollTrigger: {
         trigger: section,
